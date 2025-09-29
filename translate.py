@@ -37,4 +37,4 @@ if __name__ == "__main__":
         fileindex += 1
 
 
-    img.save("main.png", "PNG")
+    img.save("main.png", "PNG", compress_level=0)

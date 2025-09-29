@@ -26,10 +26,10 @@ if __name__ == "__main__":
 
     while True:
         cursor.store(current_canvas)
-        cursor.execute(current_canvas)
+        cursor.execute(current_canvas, canvases)
         cursor.affect(current_canvas)
         cursor.move()
 
-        canvases[cursor.canvas[0]][cursor.canvas[1]].save("out.png", "PNG")
-        print(cursor.position)
+        canvases[cursor.canvas[0]][cursor.canvas[1]].save("out.png", "PNG", compress_level=0)
+        print(f"{cursor.position} : {cursor.op}")
         time.sleep(0.5)
