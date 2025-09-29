@@ -17,7 +17,7 @@ Positions are defined by the values of the green and the blue channel of a given
 ## Functions
 
 Functions are defined by the value of a pixel's red channel.
-The following headers indicate \[name\] : \[value\]
+The following headers indicate \[name\] : \[hex value\]
 
 ### Jump : 01
 
@@ -29,5 +29,16 @@ Reads the next pixel, writes it to the given position, then skips the next pixel
 
 ### Read : 03
 
-Currently useless. Sets the cursor's memory to the given position
+Currently useless. Sets the cursor's memory to the given position. (Could be used as a copy?)
 
+### Endif : 10
+
+Delimits the end of an if. Its position value is ignored
+
+### If : 11
+
+Checks if the memory slot at position holds the same value as the next pixel. If yes, execute what is enclosed between the if and the endif.
+
+### Addition : 20
+
+Adds the next to pixels (maxed out result at ffffff) and returns the value into the position argument.
